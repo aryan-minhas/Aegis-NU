@@ -27,6 +27,14 @@
     {
       "matches": ["*://*.nu.edu.pk/Student/StudentMarks*"],
       "js": ["src/marks/index.js"]
+    },
+    {
+      "matches": ["*://*.nu.edu.pk/Student/StudentPloRpt*"],
+      "js": ["src/plo/index.js"]
+    },
+    {
+      "matches": ["*://*.nu.edu.pk/Student/CourseFeedback*"],
+      "js": ["src/feedback/index.js"]
     }
   ],
   "permissions": [

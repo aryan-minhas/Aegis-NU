@@ -15,6 +15,8 @@ export default defineConfig({
         attendance: resolve(__dirname, 'src/content/attendance.js'),
         gpa: resolve(__dirname, 'src/content/gpa.js'),
         marks: resolve(__dirname, 'src/content/marks.js'),
+        plo: resolve(__dirname, 'src/content/plo.js'),
+        feedback: resolve(__dirname, 'src/content/feedback.js'),
       },
       output: {
         // Output format to prevent Vite from generating hashes for extension files 
