@@ -15,6 +15,10 @@
     {
       "matches": ["*://*.nu.edu.pk/*"],
       "js": ["src/content/index.js"]
+    },
+    {
+      "matches": ["*://*.nu.edu.pk/Student/StudentAttendance*"],
+      "js": ["src/attendance/index.js"]
     }
   ],
   "permissions": [
