@@ -19,6 +19,7 @@ export default defineConfig({
         feedback: resolve(__dirname, 'src/content/feedback.js'),
         fee: resolve(__dirname, 'src/content/fee.js'),
         profile: resolve(__dirname, 'src/content/profile.js'),
+        schedule: resolve(__dirname, 'src/content/schedule.js'),
       },
       output: {
         // Output format to prevent Vite from generating hashes for extension files 

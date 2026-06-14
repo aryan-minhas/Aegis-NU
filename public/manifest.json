@@ -43,6 +43,10 @@
     {
       "matches": ["*://*.nu.edu.pk/StudentProfile*", "*://*.nu.edu.pk/Home*"],
       "js": ["src/profile/index.js"]
+    },
+    {
+      "matches": ["*://*.nu.edu.pk/Student/TentativeStudyPlan*", "*://*.nu.edu.pk/CourseRegistration*"],
+      "js": ["src/schedule/index.js"]
     }
   ],
   "permissions": [
