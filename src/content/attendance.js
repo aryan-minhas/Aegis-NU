@@ -79,7 +79,9 @@ function parseAttendanceDOM(courseData) {
         if (matchedCourse) {
             // FAST-NUCES typical logic: allowed absents is roughly Credit Hours * 2. 
             // (Standard 20% allowance over a ~16 week semester).
-            const allowedAbsents = Math.floor(matchedCourse.creditHours * 2);
+            const allowedAbsents = matchedCourse.creditHours === 1 
+                ? 3 
+                : Math.floor(matchedCourse.creditHours * 2);
             const remaining = allowedAbsents - absentCount;
             
             if (remaining > 0) {

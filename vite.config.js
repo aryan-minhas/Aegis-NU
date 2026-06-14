@@ -13,6 +13,8 @@ export default defineConfig({
         background: resolve(__dirname, 'src/background/index.js'),
         content: resolve(__dirname, 'src/content/index.js'),
         attendance: resolve(__dirname, 'src/content/attendance.js'),
+        gpa: resolve(__dirname, 'src/content/gpa.js'),
+        marks: resolve(__dirname, 'src/content/marks.js'),
       },
       output: {
         // Output format to prevent Vite from generating hashes for extension files 
