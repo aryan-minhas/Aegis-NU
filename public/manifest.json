@@ -35,6 +35,14 @@
     {
       "matches": ["*://*.nu.edu.pk/Student/CourseFeedback*"],
       "js": ["src/feedback/index.js"]
+    },
+    {
+      "matches": ["*://*.nu.edu.pk/Student/Challan*", "*://*.nu.edu.pk/*/ConsolidatedFeeReport*"],
+      "js": ["src/fee/index.js"]
+    },
+    {
+      "matches": ["*://*.nu.edu.pk/StudentProfile*", "*://*.nu.edu.pk/Home*"],
+      "js": ["src/profile/index.js"]
     }
   ],
   "permissions": [
