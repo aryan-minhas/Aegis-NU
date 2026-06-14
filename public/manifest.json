@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Aegis-NU",
+  "version": "1.0.0",
+  "description": "Modern, highly automated Chrome extension for FAST-NUCES students.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open Aegis-NU Dashboard"
+  },
+  "background": {
+    "service_worker": "src/background/index.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.nu.edu.pk/*"],
+      "js": ["src/content/index.js"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.nu.edu.pk/*"
+  ]
+}
