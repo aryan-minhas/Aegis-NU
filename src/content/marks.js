@@ -5,10 +5,21 @@ if (window.location.href.includes('StudentMarks')) {
     setTimeout(initMarksModule, 1500); // Marks load dynamically, need a longer delay
 }
 
+// Message Listener for manual trigger
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'triggerMarks') {
+        initMarksModule();
+        sendResponse({ status: 'success' });
+    }
+});
+
 function initMarksModule() {
     const courseTabs = document.querySelectorAll('.tab-pane');
     
     courseTabs.forEach(tab => {
+        // Prevent duplicate widgets
+        if (tab.querySelector('.aegis-target-widget')) return;
+
         // 1. Auto-Solve Grand Total
         const calculationRows = tab.querySelectorAll('.calculationrow');
         if (calculationRows.length === 0) return;

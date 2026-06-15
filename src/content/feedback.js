@@ -5,7 +5,18 @@ if (window.location.href.includes('CourseFeedback')) {
     setTimeout(initFeedbackModule, 1000);
 }
 
+// Message Listener for manual trigger
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'triggerFeedback') {
+        initFeedbackModule();
+        sendResponse({ status: 'success' });
+    }
+});
+
 function initFeedbackModule() {
+    // Prevent duplicate injection
+    if (document.querySelector('.aegis-feedback-widget')) return;
+
     // 2. Create floating widget
     const widget = document.createElement('div');
     widget.className = 'aegis-feedback-widget';

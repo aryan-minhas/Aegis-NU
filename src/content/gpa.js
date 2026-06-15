@@ -13,7 +13,18 @@ if (window.location.href.includes('Transcript')) {
     setTimeout(initGPAModule, 1000);
 }
 
+// Message Listener for manual trigger
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'triggerGPA') {
+        initGPAModule();
+        sendResponse({ status: 'success' });
+    }
+});
+
 function initGPAModule() {
+    // Prevent duplicate injection
+    if (document.querySelector('.aegis-live-gpa')) return;
+
     // Target the tables inside the transcript view. 
     // FlexStudent typically lays out semesters in .col-md-6 blocks
     const semesterBlocks = document.querySelectorAll('.col-md-6');
