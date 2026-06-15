@@ -88,7 +88,7 @@ function injectWarningBanner(daysRemaining, dateString) {
             border: 'border-red-500',
             text: 'text-red-700',
             icon: '🚨',
-            message: \`URGENT: Fee deadline passed \${Math.abs(daysRemaining)} days ago (\${dateString}). Late fees may apply.\`
+            message: `URGENT: Fee deadline passed ${Math.abs(daysRemaining)} days ago (${dateString}). Late fees may apply.`
         };
     } else if (daysRemaining === 0) {
         config = {
@@ -96,16 +96,16 @@ function injectWarningBanner(daysRemaining, dateString) {
             border: 'border-red-500',
             text: 'text-red-700',
             icon: '⏰',
-            message: \`URGENT: Fee deadline is TODAY (\${dateString}). Please pay immediately.\`
+            message: `URGENT: Fee deadline is TODAY (${dateString}). Please pay immediately.`
         };
     } else {
-        config.message = \`NOTICE: Fee deadline in \${daysRemaining} days (\${dateString}).\`;
+        config.message = `NOTICE: Fee deadline in ${daysRemaining} days (${dateString}).`;
     }
 
-    banner.className = \`\${config.bg} \${config.border} \${config.text} border-l-4 p-4 mb-4 shadow-md flex items-center gap-3 font-sans sticky top-0 z-50\`;
+    banner.className = `${config.bg} ${config.border} ${config.text} border-l-4 p-4 mb-4 shadow-md flex items-center gap-3 font-sans sticky top-0 z-50`;
     
     // Inline styles as fallback
-    banner.style.cssText = \`
+    banner.style.cssText = `
         position: sticky;
         top: 0;
         z-index: 9999;
@@ -116,15 +116,15 @@ function injectWarningBanner(daysRemaining, dateString) {
         gap: 12px;
         font-family: system-ui, -apple-system, sans-serif;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        border-left: 4px solid \${daysRemaining <= 0 ? '#ef4444' : '#facc15'};
-        background-color: \${daysRemaining <= 0 ? '#fef2f2' : '#fefce8'};
-        color: \${daysRemaining <= 0 ? '#b91c1c' : '#854d0e'};
-    \`;
+        border-left: 4px solid ${daysRemaining <= 0 ? '#ef4444' : '#facc15'};
+        background-color: ${daysRemaining <= 0 ? '#fef2f2' : '#fefce8'};
+        color: ${daysRemaining <= 0 ? '#b91c1c' : '#854d0e'};
+    `;
 
-    banner.innerHTML = \`
-        <span style="font-size: 1.5rem;">\${config.icon}</span>
-        <div style="font-weight: 600; font-size: 1rem;">\${config.message}</div>
-    \`;
+    banner.innerHTML = `
+        <span style="font-size: 1.5rem;">${config.icon}</span>
+        <div style="font-weight: 600; font-size: 1rem;">${config.message}</div>
+    `;
 
     // Inject at the very top of the main container or body
     const mainContainer = document.querySelector('.page-content') || document.body;
